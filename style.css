@@ -1,7 +1,16 @@
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  color: skyblue;
+  font-family: "Montserrat", sans-serif;
 }
 
 .app {
@@ -12,21 +21,17 @@
   font-family: "Montserrat", sans-serif;
 }
 
-h1{
-  text-align: center;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-}
-
-.select {
+.select,
+.sound-picker {
   height: 80%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  flex: 1;
+  flex: 10;
 }
-.select button{
+.select button,
+.sound-picker button {
   color: white;
   width: 30%;
   height: 10%;
@@ -38,6 +43,20 @@ h1{
   transition: all 0.5s ease;
 }
 
+.sound-picker button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  padding: 30px;
+  border-radius: 50%;
+}
+.sound-picker button{
+  background: skyblue;
+}
+
+.sound-picker button img {
+  height: 100%;
+}
 
 .select button:hover {
   background: skyblue;
@@ -62,11 +81,9 @@ h1{
   transform: translate(-50%, -50%) rotate(-90deg);
   pointer-events: none;
 }
-.player-container svg circle {
-  transition: all 0.2s ease-in-out;
-}
+
 .time-display {
-  color: skyblue;
+  color: white;
   position: absolute;
   font-size: 50px;
   bottom: 10%;

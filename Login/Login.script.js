@@ -2,11 +2,16 @@ var attempt = 3; // Variable to count number of attempts.
 // Below function Executes on click of login button.
 function validate(){
 var username = document.getElementById("username").value;
-var password = document.getElementById("password").value;
-if ( username == "RBK" && password == "123"){
-alert ("Welcome RBK");
-window.location = "C:/Users/AbousheikhK/Desktop/MedApp/MedApp.html"; // Redirecting to other page.
+// var password = document.getElementById("password").value;
+
+document.getElementById("demo").innerHTML = "hello " + username
+
+if ( username === "RBK"){
+
+window.location = "C:/Users/AbousheikhK/Desktop/MedApp/MedApp.html"; 
 return false;
+
+
 }
 else{
 attempt --;// Decrementing by one.
@@ -14,7 +19,7 @@ alert("You have left "+attempt+" attempt;");
 // Disabling fields after 3 attempts.
 if( attempt == 0){
 document.getElementById("username").disabled = true;
-document.getElementById("password").disabled = true;
+// document.getElementById("password").disabled = true;
 document.getElementById("submit").disabled = true;
 return false;
 }
