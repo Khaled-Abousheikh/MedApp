@@ -1,5 +1,6 @@
 /* Below line is used for online Google font */
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+
 h2{
 background-color: white;
 padding: 30px 35px;
@@ -7,19 +8,20 @@ margin: -10px -50px;
 text-align:center;
 border-radius: 10px 10px 0 0;
 }
-hr{
-margin: 10px -50px;
-border: 0;
-border-top: 1px solid #ccc;
-margin-bottom: 40px;
+
+form{
+float:right;
 }
+
 div.container{
 width: 900px;
 height: 610px;
 margin:35px auto;
 font-family: 'Raleway', sans-serif;
-
+float:right;
+ 
 }
+
 div.main{
 width: 300px;
 padding: 10px 50px 25px;
@@ -28,9 +30,11 @@ border-radius: 10px;
 font-family: raleway;
 float:left;
 margin-top:50px;
-
-
+ position: absolute;
+  left: 50%;
+  margin-left: -200px;
 }
+
 input[type=text],input[type=password]{
 width: 100%;
 height: 40px;
@@ -42,29 +46,17 @@ color: #4f4f4f;
 font-size: 16px;
 border-radius: 5px;
 }
+
 label{
 color: #464646;
 text-shadow: 0 1px 0 #fff;
 font-size: 14px;
 font-weight: bold;
 }
-center{
-font-size:32px;
-}
-.note{
-color:red;
-}
-.valid{
-color:green;
-}
-.back{
-text-decoration: none;
-border: 1px solid rgb(0, 143, 255);
-background-color: #edfaf8;
-padding: 3px 20px;
-border-radius: 2px;
-color: black;
-}
+
+
+
+
 input[type=button]{
 font-size: 16px;
 background: #7dd4fa ;
@@ -77,6 +69,4 @@ border-radius: 5px;
 padding: 10px 0;
 outline:none;
 }
-input[type=button]:hover{
-background: #7dd4fa ;
-}
+
