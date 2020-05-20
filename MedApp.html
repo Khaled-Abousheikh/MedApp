@@ -6,9 +6,31 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body>
+<!--     <body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h2>Welcome!</h2>
+  <p>Please Wait..</p>
+</div> -->
+
     <br>
 		<h1> Meditation </h1>
-	<div class="app">
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content" style="font-family:sans-serif">
+    <a href="#">About</a>
+    <a href="#">Special Sessions</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+
+<span style="font-size:30px;cursor:pointer;color: skyblue;font-family:sans-serif" onclick="openNav()">&#9776; More </span>
+
+
+	<div id= "app"  class="app">
       <div class="vid-container">
           <video loop id="myVideo">
           <source src="./video/beach.mp4"  type="video/mp4">
@@ -17,7 +39,7 @@
   </div>
         <div class="select">
           <button data-time="300" onclick="playVid()" type="button">Start</button>
-          <button data-time="0" onclick="pauseVid()" type="button">Pause</button>
+          <button data-time="0" onclick="pauseVid()" type="button">Stop</button>
          
         </div>
         <div class="player-container">
@@ -47,3 +69,12 @@
 		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+
+     
+

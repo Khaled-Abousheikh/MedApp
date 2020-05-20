@@ -1,3 +1,31 @@
+// var myVar;
+// var myVar2
+
+// function myFunction() {
+//   myVar = setTimeout(showPage, 200);
+// }
+
+// function myFunction() {
+//   myVar2 = setTimeout(showPage2, 1500);
+// }
+
+// function showPage() {
+//   document.getElementById("loader").style.display = "none";
+//   document.getElementById("myDiv").style.display = "block"
+// }
+
+// function showPage2() {
+//   document.getElementById("myDiv").style.display = "none";
+//   document.getElementById("app").style.display = "block"
+// }
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
 
 var song = document.querySelector(".song");
 var play = document.querySelector(".play");
@@ -9,7 +37,7 @@ var video = document.querySelector(".vid-container video");
 var timeDisplay = document.querySelector(".time-display");
 // var outlineLength = outline.getTotalLength();
 //Duration
-var timeSelect = document.querySelectorAll(".select button");
+var select = document.querySelectorAll(".select button");
 var fakeDuration = 0;
 
 // outline.style.strokeDashoffset = outlineLength;
@@ -32,7 +60,7 @@ function pauseVid() {
 } 
 
 
-timeSelect.forEach(option => {
+select.forEach(option => {
   option.addEventListener("click", function() {
     fakeDuration = this.getAttribute("data-time");
     timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
@@ -59,3 +87,13 @@ song.ontimeupdate = function() {
     video.pause();
   }
 };
+
+var sounds = document.querySelectorAll(".sound-picker button");
+
+sounds.forEach(sound => {
+  sound.addEventListener("click", function() {
+    song.src = this.getAttribute("data-sound");
+    video.src = this.getAttribute("data-video");
+    checkPlaying(song);
+  });
+});
