@@ -19,6 +19,7 @@
 //   document.getElementById("app").style.display = "block"
 // }
 
+//Navi. bar functions
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
 }
@@ -29,23 +30,20 @@ function closeNav() {
 
 var song = document.querySelector(".song");
 var play = document.querySelector(".play");
-// var outline = document.querySelector(".moving-outline circle");
 var video = document.querySelector(".vid-container video");
 
 
 //Time Display
 var timeDisplay = document.querySelector(".time-display");
-// var outlineLength = outline.getTotalLength();
+
+
 //Duration
 var select = document.querySelectorAll(".select button");
 var fakeDuration = 0;
 
-// outline.style.strokeDashoffset = outlineLength;
-// outline.style.strokeDasharray = outlineLength;
-timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(
-  fakeDuration % 60
-)}`;
 
+
+//Playing and pausing vid and audio
 var vid = document.getElementById("myVideo")
 var audio = document.getElementById("myAudio"); 
 
@@ -70,24 +68,23 @@ select.forEach(option => {
 });
 
 
-
+//song timer
 song.ontimeupdate = function() {
   var currentTime = song.currentTime;
   var elapsed = fakeDuration - currentTime;
   var seconds = Math.floor(elapsed % 60);
   var minutes = Math.floor(elapsed / 60);
   timeDisplay.textContent = `${minutes}:${seconds}`;
-  // var progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
-  // outline.style.strokeDashoffset = progress;
-
+  
+//stop video and sound after time finished
   if (currentTime >= fakeDuration) {
     song.pause();
     song.currentTime = 0;
-    play.src = "./svg/play.svg";
     video.pause();
   }
 };
 
+//Sounds and select sound
 var sounds = document.querySelectorAll(".sound-picker button");
 
 sounds.forEach(sound => {
